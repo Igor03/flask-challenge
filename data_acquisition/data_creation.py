@@ -192,9 +192,5 @@ def populate_database():
     session.commit()
     session.close()
 
-if __name__ == '__main__':
-       
-    populate_database()
-
     
 
