@@ -100,14 +100,33 @@ class Controller_1(Resource):
         return marshal(_data, model_response_1)
         
     
+#@api.route('/api/<string:vendor>/<string:product>')
+#class Controller_2(Resource):
+
+#    @api.marshal_with(model_response_2)#, envelope='resource')
+#    def get(self, vendor, product):
+
+#        _cpes = db.session.query(cpe).\
+#            filter(cpe.vendor==vendor).filter(cpe.product==product).all()
+#        if not bool(_cpes): abort(404, 'Resource not found')                        
+#        _cves = self.__get_cves(_cpes)         
+#        _data = {'cves': _cves}        
+#        return marshal(_data, model_response_2)
+    
+#    def __get_cves(self, cpes):
+#        cves = []
+#        for cpe in cpes:
+#            cves+=db.session.query(cve).filter(cve.cve_id == cpe.id_cve).all()
+#        return cves
+    
 @api.route('/api/<string:vendor>/<string:product>')
 class Controller_2(Resource):
 
     @api.marshal_with(model_response_2)#, envelope='resource')
     def get(self, vendor, product):
 
-        _cpes = db.session.query(cpe).\
-            filter(cpe.vendor==vendor).filter(cpe.product==product).all()
+        _cpes = db.session.query(cpe.id_cve).\
+            filter(cpe.vendor==vendor).filter(cpe.product==product).distinct().all()
         if not bool(_cpes): abort(404, 'Resource not found')                        
         _cves = self.__get_cves(_cpes)         
         _data = {'cves': _cves}        
