@@ -1,4 +1,4 @@
-## Data Engineering Case @Debricked
+## Data Engineering Case
 
 
 The purpose of this task is to show us your coding-skills, knowledge of database design, and how to use the database efficiently. 
@@ -29,11 +29,5 @@ The database should be an SQLite database.
 #### Other
 
 You may use any other external/OSS dependencies, but keep in mind to specify a requirements.txt file or use pipenv. The project will be tested in a Linux environment. You do not need to make it "production ready" with docerization, nginx, or anything like that. I will profile at what speed you can enter the data into the database. We suggest you spend about 5-6 hours on the task but may take longer if you are unexperienced to any of the concepts. 
-
-
-#### Submission
- 
-Your project should be submitted in a zip-file to emil@debricked.com one week after you received it. 
-
 
 Good luck!
