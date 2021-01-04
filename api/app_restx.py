@@ -87,7 +87,7 @@ class cvssv3(db.Model):
     
 
 @api.route('/api/cve/<string:cve_id>')
-class Controller_1(Resource):
+class Controller1(Resource):
 
     @api.marshal_with(model_response_1)#, envelope='resource') 
     def get(self, cve_id):
@@ -101,7 +101,7 @@ class Controller_1(Resource):
         
     
 @api.route('/api/<string:vendor>/<string:product>')
-class Controller_2(Resource):
+class Controller2(Resource):
 
     @api.marshal_with(model_response_2)#, envelope='resource')
     def get(self, vendor, product):
